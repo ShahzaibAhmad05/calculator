@@ -2,7 +2,53 @@
 
 Simple inputs. Handles two numbers and one operation at a time.
 
-## How to Run
+## Documentation 
+
+> The code is mostly self-documented using python type hints and docstrings.
+> 
+> These bellow are details of what each module does. (click to expand)
+
+<!-- logic dir -->
+<details>
+  <summary><code>./logic</code></summary>
+  <br />
+  <blockquote>Logic for the functionality of the calculator. Basically, functions that perform calculations</blockquote>
+  <details>
+    <summary><code>./logic/operators</code></summary>
+    <br />
+    <blockquote>Main logic file housing basic calculation functions</blockquote>
+    <br />
+  </details>
+  <details>
+    <summary><code>./logic/utils</code></summary>
+    <br />
+    <blockquote>Utility functions, currently has only one function which is for decoding the operator class</blockquote>
+  </details>
+  <br />
+</details>
+
+<!-- ui dir -->
+<details>
+  <summary><code>./ui</code></summary>
+  <br />
+  <blockquote>Houses code for initializing, styling and handling UI</blockquote>
+  <details>
+    <summary><code>./ui/elements</code></summary>
+    <br />
+    <!-- I was working here -->
+    <blockquote>This module has classes for each UI element the calculator has. UI elements import styling functions from</blockquote>
+    <br />
+  </details>
+  <details>
+    <summary><code>./ui/calculator</code></summary>
+    <br />
+    <blockquote>Main calculator file. Initializes the app, calls functions to initialize it's elements</blockquote>
+  </details>
+  <br />
+</details>
+
+
+## Developer Setup
 
 - Clone this repository:
 
