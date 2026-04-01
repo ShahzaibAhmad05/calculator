@@ -1,4 +1,4 @@
-## GUI based calculator
+## GUI-based Calculator
 
 Simple inputs. Handles two numbers and one operation at a time.
 
@@ -10,7 +10,7 @@ Simple inputs. Handles two numbers and one operation at a time.
 
 <!-- logic dir -->
 <details>
-  <summary><code>./logic</code></summary>
+  <summary><code>./logic/</code></summary>
   <br />
   <blockquote>Logic for the functionality of the calculator. Basically, functions that perform calculations</blockquote>
   <details>
@@ -29,7 +29,7 @@ Simple inputs. Handles two numbers and one operation at a time.
 
 <!-- ui dir -->
 <details>
-  <summary><code>./ui</code></summary>
+  <summary><code>./ui/</code></summary>
   <br />
   <blockquote>Houses code for initializing, styling and handling UI</blockquote>
   <details>
