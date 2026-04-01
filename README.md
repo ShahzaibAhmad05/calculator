@@ -2,6 +2,19 @@
 
 Simple inputs. Handles two numbers and one operation at a time.
 
+
+## Screenshots
+
+![Calculator Demo](https://lh3.googleusercontent.com/d/1qmJnaHaNTClUwiuom7mkL4r1suFoBkig)
+
+
+<table>
+  <tr>
+    <td><a href="">Download the Exe</a></td>
+  </tr>
+</table>
+
+
 ## Documentation 
 
 > The code is mostly self-documented using python type hints and docstrings.
