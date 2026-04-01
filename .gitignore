@@ -1,2 +1,12 @@
 # cache 
 **/__pycache__
+
+# build items
+**/*.exe
+**/*.spec
+build/
+dist/
+
+# env
+.venv/
+
