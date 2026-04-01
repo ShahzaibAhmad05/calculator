@@ -65,6 +65,30 @@ Simple inputs. Handles two numbers and one operation at a time.
   <br />
 </details>
 
+<!-- connector module -->
+<details>
+  <summary><code>./connector</code></summary>
+  <br />
+  <blockquote>The bridge between the UI and the logic functions. This has functions that act as a "one-way road" between the UI and the background logic.</blockquote>
+  <br />
+</details>
+
+<!-- engine module -->
+<details>
+  <summary><code>./engine</code></summary>
+  <br />
+  <blockquote>The boss. This is where the workflow starts running.</blockquote>
+  <br />
+</details>
+
+<!-- exceptions module -->
+<details>
+  <summary><code>./exceptions</code></summary>
+  <br />
+  <blockquote>This module defines all kinds of exceptions that can occur in the app. No exception is expected to occur in any function unless it is defined in this module.</blockquote>
+  <br />
+</details>
+
 
 ---
 
