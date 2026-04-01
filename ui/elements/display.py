@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from ui.calculator import Calculator
 
 
-class Display(QLineEdit):
+class CalculatorDisplay(QLineEdit):
     
     def __init__(self, calculator: 'Calculator') -> None:
         super().__init__(parent=calculator)

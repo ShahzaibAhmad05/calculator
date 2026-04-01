@@ -4,7 +4,9 @@ from PyQt6.QtGui import QFont
 
 
 def style_button(button: QPushButton) -> QPushButton:
-    button.setMinimumSize(75, 75)
+    """
+    Styles buttons for the calculator.
+    """
     button.setFont(get_font(font_size=20))
     return button
 

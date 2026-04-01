@@ -9,12 +9,12 @@ from connector import on_button_click
 
 
 # imported only during type checking
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, override
 if TYPE_CHECKING:
     from ui.calculator import Calculator
 
 
-class Buttons(QGridLayout):
+class CalculatorButtonGrid(QGridLayout):
     
     def __init__(self, calculator: 'Calculator'):
         super().__init__()
@@ -31,18 +31,39 @@ class Buttons(QGridLayout):
         
 
         for text, row, col in buttons:
-            button = QPushButton(text=text)
-            style_button(button)
-            
-            button.clicked.connect(
-                lambda checked, 
-                calculator=self.calculator,
-                text=text: on_button_click(calculator, text)
-            )
-            
+            button = CalculatorButton(text=text)
             self.addWidget(button, row, col)
             
 
         # add this layout class to the main layout
         calculator.main_layout.addLayout(self)
+        
+
+    def heightForWidth(self, width: int) -> int:
+        """ 
+        keeps 1:1 ratio between height and width. 
+        """
+        return width
+
+
+class CalculatorButton(QPushButton):
+    
+    def __init__(self, text: str) -> None:
+        super().__init__(text=text)
+        style_button(self)
+        
+        self.clicked.connect(
+            lambda _, 
+            calculator=self.calculator,
+            text=text: on_button_click(calculator, text)
+        )
+        
+
+    @override
+    def resizeEvent(self, event):
+        """
+        Reconsider the height based on the width. Keeps a 1:1 ratio
+        """
+        super().resizeEvent(event)
+        self.setFixedHeight(self.width())
         

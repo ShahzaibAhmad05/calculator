@@ -4,8 +4,8 @@ from PyQt6.QtGui import QIcon
 
 
 # custom-defined UI elements
-from ui.elements.display import Display
-from ui.elements.buttons import Buttons
+from ui.elements.display import CalculatorDisplay
+from ui.elements.buttons import CalculatorButtonGrid
 
 
 # to be used for type checking only
@@ -19,7 +19,7 @@ from connector import get_operator
 
 
 class Calculator(QWidget):
-    def __init__(self, app: QApplication) -> None:
+    def __init__(self, _: QApplication) -> None:
         super().__init__()
         self.properties_setup()
         self.ui_setup()
@@ -44,8 +44,8 @@ class Calculator(QWidget):
         self.main_layout = QVBoxLayout()
         
         # Initialize the elements
-        self.display = Display(calculator=self)
-        self.buttons = Buttons(calculator=self)
+        self.display = CalculatorDisplay(calculator=self)
+        self.buttons = CalculatorButtonGrid(calculator=self)
                 
         # set as the main layout of the calculator
         self.setLayout(self.main_layout)
