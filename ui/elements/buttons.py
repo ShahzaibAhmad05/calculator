@@ -18,8 +18,6 @@ class CalculatorButtonGrid(QGridLayout):
     
     def __init__(self, calculator: 'Calculator'):
         super().__init__()
-        self.calculator = calculator
-        
 
         # define the buttons and add to the grid
         buttons = [
@@ -31,7 +29,7 @@ class CalculatorButtonGrid(QGridLayout):
         
 
         for text, row, col in buttons:
-            button = CalculatorButton(text=text)
+            button = CalculatorButton(calculator, text=text)
             self.addWidget(button, row, col)
             
 
@@ -47,14 +45,18 @@ class CalculatorButtonGrid(QGridLayout):
 
 
 class CalculatorButton(QPushButton):
+    """ 
+    Self resizing button. In case of styling, change the width only. The height will
+    follow, maintaining a 1:1
+    """
     
-    def __init__(self, text: str) -> None:
+    def __init__(self, calculator: 'Calculator', text: str) -> None:
         super().__init__(text=text)
         style_button(self)
         
         self.clicked.connect(
             lambda _, 
-            calculator=self.calculator,
+            calculator=calculator,
             text=text: on_button_click(calculator, text)
         )
         

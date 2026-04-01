@@ -7,6 +7,7 @@ def style_button(button: QPushButton) -> QPushButton:
     """
     Styles buttons for the calculator.
     """
+    button.setMinimumWidth(75)      # height would follow since it is forced 1:1
     button.setFont(get_font(font_size=20))
     return button
 
