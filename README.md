@@ -1,18 +1,23 @@
-## GUI-based Calculator
+## Calculator 
 
 Simple inputs. Handles two numbers and one operation at a time.
 
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyQt6](https://img.shields.io/badge/PyQt6-512BD4?style=for-the-badge&logo=python&logoColor=white)
+
+
+---
 
 ## Screenshots
 
 ![Calculator Demo](https://lh3.googleusercontent.com/d/1qmJnaHaNTClUwiuom7mkL4r1suFoBkig)
 
 
-<table>
-  <tr>
-    <td><a href="">Download the Exe</a></td>
-  </tr>
-</table>
+<a href="https://drive.google.com/uc?export=download&id=1xAALMAyzZl4ewpXzfnpBtmKhxRqHxnWz">Download EXE File</a>
+
+
+---
 
 
 ## Documentation 
@@ -59,6 +64,9 @@ Simple inputs. Handles two numbers and one operation at a time.
   </details>
   <br />
 </details>
+
+
+---
 
 
 ## Developer Setup
