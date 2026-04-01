@@ -4,8 +4,8 @@ from PyQt6.QtGui import QIcon
 
 
 # custom-defined UI elements
-from ui.elements.display import CalculatorDisplay
-from ui.elements.buttons import CalculatorButtonGrid
+from ui.elements.calculatorDisplay import CalculatorDisplay
+from ui.elements.calculatorButtonGrid import CalculatorButtonGrid
 
 
 # to be used for type checking only
