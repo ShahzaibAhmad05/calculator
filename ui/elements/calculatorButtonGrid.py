@@ -40,13 +40,6 @@ class CalculatorButtonGrid(QGridLayout):
         for text, row, col in buttons:
             button = CalculatorButton(self.calculator, text=text)
             self.addWidget(button, row, col)
-        
-        
-    def heightForWidth(self, width: int) -> int:
-        """ 
-        keeps 1:1 ratio between height and width. 
-        """
-        return width
 
 
 class CalculatorButton(QPushButton):

@@ -1,5 +1,4 @@
 # pyqt stuff
-from PyQt6.QtWidgets import QPushButton, QLineEdit, QGridLayout
 from PyQt6.QtGui import QFont
 
 
@@ -30,7 +29,7 @@ class Style:
 
 
     @staticmethod
-    def calculator_display(display: 'CalculatorDisplay') -> QLineEdit:
+    def calculator_display(display: 'CalculatorDisplay') -> None:
         display.setMinimumHeight(50)
         display.setFont(Style._get_font(font_size=14))
         display.setReadOnly(True)
