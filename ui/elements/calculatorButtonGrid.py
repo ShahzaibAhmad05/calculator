@@ -64,12 +64,3 @@ class CalculatorButton(QPushButton):
             text=text: Connector.on_calculator_button_click(calculator, text)
         )
         
-
-    @override
-    def resizeEvent(self, event):
-        """
-        Reconsider the height based on the width. Keeps a 1:1 ratio
-        """
-        super().resizeEvent(event)
-        self.setFixedHeight(self.width())
-        

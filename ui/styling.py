@@ -10,20 +10,20 @@ class Style:
         """
         Styles buttons for the calculator.
         """
-        button.setMinimumWidth(75)      # height would follow since it is forced 1:1
-        button.setFont(Style._get_font(font_size=20))
+        button.setFixedSize(50, 50)      
+        button.setFont(Style._get_font(font_size=14))
         return button
 
 
     @staticmethod
     def calculatorDisplay(line_edit: QLineEdit) -> QLineEdit:
-        line_edit.setMinimumHeight(75)
-        line_edit.setFont(Style._get_font(font_size=20))
+        line_edit.setMinimumHeight(50)
+        line_edit.setFont(Style._get_font(font_size=14))
         
         line_edit.setStyleSheet("""
             QLineEdit {
-                padding-left: 12px;
-                padding-right: 12px;
+                padding-left: 6px;
+                padding-right: 6px;
                 background-color: rgb(43, 43, 43);
                 border: 1px solid rgb(53, 53, 53);
                 border-radius: 5px;
