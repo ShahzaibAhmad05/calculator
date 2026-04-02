@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     
 
 # utils from logic via connector
-from connector import get_operator
+from connector import Connector
 
 
 class Calculator(QWidget):
@@ -122,7 +122,7 @@ class Calculator(QWidget):
         """
         Set the operator from the display, only usable when 
         """
-        self.operator = get_operator(text)
+        self.operator = Connector.get_operator(text)
         
 
     def operate(self) -> None:

@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QPushButton, QGridLayout
 from ui.styling import Style
 
 # logic connector
-from connector import on_button_click
+from connector import Connector
 
 
 # imported only during type checking
@@ -61,7 +61,7 @@ class CalculatorButton(QPushButton):
         self.clicked.connect(
             lambda _, 
             calculator=calculator,
-            text=text: on_button_click(calculator, text)
+            text=text: Connector.on_calculator_button_click(calculator, text)
         )
         
 
