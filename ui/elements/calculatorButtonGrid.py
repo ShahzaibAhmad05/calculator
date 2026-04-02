@@ -9,7 +9,7 @@ from connector import Connector
 
 
 # imported only during type checking
-from typing import TYPE_CHECKING, override
+from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from ui.calculator import Calculator
 
@@ -21,6 +21,7 @@ class CalculatorButtonGrid(QGridLayout):
         
         self.calculator = calculator
         self.buttons_setup()
+        Style.calculator_button_grid(self)
         calculator.main_layout.addLayout(self)
         
 
@@ -56,7 +57,7 @@ class CalculatorButton(QPushButton):
     
     def __init__(self, calculator: 'Calculator', text: str) -> None:
         super().__init__(text=text)
-        Style.calculatorButton(self)
+        Style.calculator_button(self)
         
         self.clicked.connect(
             lambda _, 

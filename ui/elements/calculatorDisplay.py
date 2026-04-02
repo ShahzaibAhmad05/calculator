@@ -17,6 +17,6 @@ class CalculatorDisplay(QLineEdit):
         super().__init__(parent=calculator)
         
         # style and add to layout of the calculator
-        Style.calculatorDisplay(self)
+        Style.calculator_display(self)
         calculator.main_layout.addWidget(self)
         

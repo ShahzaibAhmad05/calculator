@@ -1,26 +1,41 @@
 # pyqt stuff
-from PyQt6.QtWidgets import QPushButton, QLineEdit
+from PyQt6.QtWidgets import QPushButton, QLineEdit, QGridLayout
 from PyQt6.QtGui import QFont
+
+
+# for type checking only
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from ui.elements.calculatorButtonGrid import CalculatorButtonGrid, CalculatorButton
+    from ui.elements.calculatorDisplay import CalculatorDisplay
 
 
 class Style:
     
     @staticmethod
-    def calculatorButton(button: QPushButton) -> QPushButton:
+    def calculator_button_grid(grid: 'CalculatorButtonGrid') -> None:
+        """
+        Styling for CalculatorButtonGrid
+        """
+        grid.setSpacing(0)
+        
+    
+    @staticmethod
+    def calculator_button(button: 'CalculatorButton') -> None:
         """
         Styles buttons for the calculator.
         """
-        button.setFixedSize(50, 50)      
+        button.setFixedSize(50, 50)   
         button.setFont(Style._get_font(font_size=14))
-        return button
 
 
     @staticmethod
-    def calculatorDisplay(line_edit: QLineEdit) -> QLineEdit:
-        line_edit.setMinimumHeight(50)
-        line_edit.setFont(Style._get_font(font_size=14))
+    def calculator_display(display: 'CalculatorDisplay') -> QLineEdit:
+        display.setMinimumHeight(50)
+        display.setFont(Style._get_font(font_size=14))
+        display.setReadOnly(True)
         
-        line_edit.setStyleSheet("""
+        display.setStyleSheet("""
             QLineEdit {
                 padding-left: 6px;
                 padding-right: 6px;
@@ -34,9 +49,6 @@ class Style:
                 border: 1px solid rgb(53, 53, 53);
             }
         """)
-        
-        line_edit.setReadOnly(True)
-        return line_edit
         
 
     """ _____________ Helper Utils for styling ____________ """
