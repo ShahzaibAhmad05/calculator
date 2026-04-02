@@ -24,7 +24,7 @@ class Style:
         """
         Styles buttons for the calculator.
         """
-        button.setFixedSize(50, 50)   
+        button.setFixedSize(75, 50)   
         button.setFont(Style._get_font(font_size=14))
 
 
@@ -56,6 +56,5 @@ class Style:
     def _get_font(font_size: int) -> QFont:
         font = QFont()
         font.setPointSize(font_size)
-        font.setBold(True)
         return font
 

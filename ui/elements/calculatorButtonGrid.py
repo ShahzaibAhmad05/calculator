@@ -7,6 +7,9 @@ from ui.styling import Style
 # logic connector
 from connector import Connector
 
+# buttons to put in this grid
+from ui.elements.calculatorButton import primaryCalculatorButton, secondaryCalculatorButton
+
 
 # imported only during type checking
 from typing import TYPE_CHECKING
@@ -15,46 +18,50 @@ if TYPE_CHECKING:
 
 
 class CalculatorButtonGrid(QGridLayout):
+    """
+    Grid housing functional buttons on the calculator
+    """
     
     def __init__(self, calculator: 'Calculator'):
         super().__init__()
-        
         self.calculator = calculator
-        self.buttons_setup()
+        
+        self._primary_buttons_setup()
+        self._secondary_buttons_setup()
         Style.calculator_button_grid(self)
         calculator.main_layout.addLayout(self)
         
 
-    def buttons_setup(self) -> None:
+    """ ____________ Internal Functions _____________ """
+    
+
+    def _primary_buttons_setup(self) -> None:
         """
-        defines and adds buttons to the grid.
+        Adds primary buttons.
         """
         
-        buttons = [
-            ('7', 0, 0), ('8', 0, 1), ('9', 0, 2), ('/', 0, 3),
-            ('4', 1, 0), ('5', 1, 1), ('6', 1, 2), ('*', 1, 3),
-            ('1', 2, 0), ('2', 2, 1), ('3', 2, 2), ('-', 2, 3),
-            ('0', 3, 0), ('C', 3, 1), ('=', 3, 2), ('+', 3, 3),
+        primary_buttons = [
+            ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('x', 1, 3),
+            ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('-', 2, 3),
+            ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('+', 3, 3),
+            ('0', 4, 0), ('.', 4, 1), ('÷', 4, 2), ('=', 4, 3),
+        ]
+            
+        for text, row, col in primary_buttons:
+            button = secondaryCalculatorButton(self.calculator, text=text)
+            self.addWidget(button, row, col)
+        
+
+    def _secondary_buttons_setup(self) -> None:
+        """
+        Adds secondary buttons.
+        """
+        
+        secondary_buttons = [
+            ('%', 0, 0), ('CE', 0, 1), ('C', 0, 2), ('⌫', 0, 3),
         ]
 
-        for text, row, col in buttons:
-            button = CalculatorButton(self.calculator, text=text)
+        for text, row, col in secondary_buttons:
+            button = primaryCalculatorButton(self.calculator, text=text)
             self.addWidget(button, row, col)
 
-
-class CalculatorButton(QPushButton):
-    """ 
-    Self resizing button. In case of styling, change the width only. The height will
-    follow, maintaining a 1:1
-    """
-    
-    def __init__(self, calculator: 'Calculator', text: str) -> None:
-        super().__init__(text=text)
-        Style.calculator_button(self)
-        
-        self.clicked.connect(
-            lambda _, 
-            calculator=calculator,
-            text=text: Connector.on_calculator_button_click(calculator, text)
-        )
-        

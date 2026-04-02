@@ -31,7 +31,7 @@ class Connector:
             calculator.clear_memory()
             
             
-        elif text in ["+", "-", "/", "*"]:
+        elif text in ["+", "-", "x", "÷"]:
             # pick num1 and add spaces and operator
             calculator.set_num1_from_display()
             calculator.clear_display()
