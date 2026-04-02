@@ -18,25 +18,29 @@ class CalculatorButtonGrid(QGridLayout):
     
     def __init__(self, calculator: 'Calculator'):
         super().__init__()
+        
+        self.calculator = calculator
+        self.buttons_setup()
+        calculator.main_layout.addLayout(self)
+        
 
-        # define the buttons and add to the grid
+    def buttons_setup(self) -> None:
+        """
+        defines and adds buttons to the grid.
+        """
+        
         buttons = [
             ('7', 0, 0), ('8', 0, 1), ('9', 0, 2), ('/', 0, 3),
             ('4', 1, 0), ('5', 1, 1), ('6', 1, 2), ('*', 1, 3),
             ('1', 2, 0), ('2', 2, 1), ('3', 2, 2), ('-', 2, 3),
             ('0', 3, 0), ('C', 3, 1), ('=', 3, 2), ('+', 3, 3),
         ]
-        
 
         for text, row, col in buttons:
-            button = CalculatorButton(calculator, text=text)
+            button = CalculatorButton(self.calculator, text=text)
             self.addWidget(button, row, col)
-            
-
-        # add this layout class to the main layout
-        calculator.main_layout.addLayout(self)
         
-
+        
     def heightForWidth(self, width: int) -> int:
         """ 
         keeps 1:1 ratio between height and width. 
