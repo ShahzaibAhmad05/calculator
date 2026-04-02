@@ -2,7 +2,7 @@
 from PyQt6.QtWidgets import QLineEdit
 
 # custom styling
-from ui.styling import style_display
+from ui.styling import Style
 
 
 # imports only during type checking
@@ -17,6 +17,6 @@ class CalculatorDisplay(QLineEdit):
         super().__init__(parent=calculator)
         
         # style and add to layout of the calculator
-        style_display(self)
+        Style.calculatorDisplay(self)
         calculator.main_layout.addWidget(self)
         

@@ -2,7 +2,7 @@
 from PyQt6.QtWidgets import QPushButton, QGridLayout
 
 # custom styling
-from ui.styling import style_button
+from ui.styling import Style
 
 # logic connector
 from connector import on_button_click
@@ -52,7 +52,7 @@ class CalculatorButton(QPushButton):
     
     def __init__(self, calculator: 'Calculator', text: str) -> None:
         super().__init__(text=text)
-        style_button(self)
+        Style.calculatorButton(self)
         
         self.clicked.connect(
             lambda _, 
