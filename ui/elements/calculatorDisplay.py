@@ -20,3 +20,10 @@ class CalculatorDisplay(QLineEdit):
         Style.calculator_display(self)
         calculator.main_layout.addWidget(self)
         
+
+    def setText(self, a0: str | float | int):
+        """
+        Adds type conversion property to setText function
+        """
+        super().setText(str(a0))
+        
