@@ -1,15 +1,15 @@
 # pyqt6 stuff
-from PyQt6.QtWidgets import QPushButton, QGridLayout
+from PyQt6.QtWidgets import QGridLayout
 
 # custom styling
 from ui.styling import Style
 
-# logic connector
-from connector import Connector
 
 # buttons to put in this grid
-from ui.elements.calculatorButton import primaryCalculatorButton, secondaryCalculatorButton
-
+from ui.elements.calculatorButton import (
+    PrimaryCalculatorButton, 
+    SecondaryCalculatorButton
+)
 
 # imported only during type checking
 from typing import TYPE_CHECKING
@@ -41,14 +41,14 @@ class CalculatorButtonGrid(QGridLayout):
         """
         
         primary_buttons = [
-            ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('x', 1, 3),
-            ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('-', 2, 3),
-            ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('+', 3, 3),
-            ('0', 4, 0), ('.', 4, 1), ('÷', 4, 2), ('=', 4, 3),
+            ('7', 2, 0), ('8', 2, 1), ('9', 2, 2), ('×', 2, 3),
+            ('4', 3, 0), ('5', 3, 1), ('6', 3, 2), ('-', 3, 3),
+            ('1', 4, 0), ('2', 4, 1), ('3', 4, 2), ('+', 4, 3),
+            ('±', 5, 0), ('0', 5, 1), ('.', 5, 2), ('=', 5, 3),
         ]
             
         for text, row, col in primary_buttons:
-            button = secondaryCalculatorButton(self.calculator, text=text)
+            button = PrimaryCalculatorButton(text, self.calculator)
             self.addWidget(button, row, col)
         
 
@@ -58,10 +58,11 @@ class CalculatorButtonGrid(QGridLayout):
         """
         
         secondary_buttons = [
-            ('%', 0, 0), ('CE', 0, 1), ('C', 0, 2), ('⌫', 0, 3),
+            ('%', 0, 0), ('CE', 0, 1), ('C', 0, 2), ('⌫', 0, 3), 
+            ('¹∕𝑥', 1, 0), ('𝑥²', 1, 1), ('√𝑥', 1, 2), ('÷', 1, 3)
         ]
 
         for text, row, col in secondary_buttons:
-            button = primaryCalculatorButton(self.calculator, text=text)
+            button = SecondaryCalculatorButton(text, self.calculator)
             self.addWidget(button, row, col)
 
