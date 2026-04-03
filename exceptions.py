@@ -1,15 +1,8 @@
 
-
-class BadInputException(Exception):
-    """ Used when input is not the desired type """
-
-
-class BadOperatorException(BadInputException):
-    """ Used when operator is unknown """
-
-
-class BadCharacterException(BadInputException):
-    """ Used when input character is unknown """
+class UnknownCharacterException(Exception):
+    """ 
+    Used when the character we are working with is unknown / unexpected 
+    """
     
 
 class BadLogicException(Exception):
@@ -18,8 +11,6 @@ class BadLogicException(Exception):
     """
 
 
-class UnknownCharacterException(Exception):
-    """ 
-    Used when the character we are working with is unknown / unexpected 
-    """
-    
+class BadArgumentsException(Exception):
+    """ Used when wrong type of arguments are thrown into a function """
+
