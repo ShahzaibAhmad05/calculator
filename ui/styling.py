@@ -1,5 +1,6 @@
 # pyqt stuff
 from PyQt6.QtGui import QFont
+from PyQt6.QtCore import Qt
 
 
 # for type checking only
@@ -70,8 +71,9 @@ class Style:
     @staticmethod
     def calculator_display(display: 'CalculatorDisplay') -> None:
         display.setMinimumHeight(50)
-        display.setFont(Style._get_font(font_size=14))
-        display.setReadOnly(True)
+        display.setFont(Style._get_font(font_size=20))
+        display.setAlignment(Qt.AlignmentFlag.AlignRight)
+        # display.setReadOnly(True)
         
         display.setStyleSheet("""
             QLineEdit {
