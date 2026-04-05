@@ -79,7 +79,7 @@ class Expression():
         
         # characters valid to be added to the memory directly
         self.valid_chars: list = [
-            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '00'
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '00',
             '-', '+', '.', '%', 
         ]
         
@@ -117,7 +117,7 @@ class Expression():
             self.calculatable_expression.append(char)
             
         except KeyError:
-            raise UnknownCharacterException("Given character is not valid.")
+            raise UnknownCharacterException(f"Given character is not valid.\nCharacter: {char}")
             
     
         
@@ -136,7 +136,7 @@ class Expression():
             self.display_expression.append(char)
         
         except KeyError:
-            raise UnknownCharacterException("Given character is not valid.")
+            raise UnknownCharacterException(f"Given character is not valid.\nCharacter: {char}")
         
 
     def _join_expression(self, expression: list) -> str:
