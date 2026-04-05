@@ -9,7 +9,7 @@ from PyQt6.QtWidgets import QApplication
 
 def main() -> None:
     app = QApplication(sys.argv)
-    calculator = Calculator(app)
+    calculator = Calculator(app, debug=True)
     calculator.show()
     
     # connect the exit code of the app with system

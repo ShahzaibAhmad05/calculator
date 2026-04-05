@@ -28,7 +28,7 @@ class Operator:
         pass
     
     
-    def operate(self, expression: 'Expression') -> str:
+    def operate(self, expression: 'Expression', debug: bool=False) -> str:
         """
         Returns the string of the solved expression. Might be a 
         fraction, but it is guaranteed to be float convertible.
@@ -36,7 +36,10 @@ class Operator:
         
         try:
             calculatable_str = expression.get_calculatable()
+            if debug:
+                print(f"Expression to operate on: '{calculatable_str}'")
             return sympify(calculatable_str)
+        
         except SympifyError:
             raise BadExpressionException(
                 f"Bad expression. Cannot parse.\nExpression: '{calculatable_str}'")

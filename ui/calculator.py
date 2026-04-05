@@ -21,11 +21,11 @@ class Calculator(QWidget):
     display memory.
     """
     
-    def __init__(self, _: QApplication) -> None:
+    def __init__(self, _: QApplication, debug: bool=False) -> None:
         super().__init__()
         self._properties_setup()
         self._ui_setup()
-        self._variables_setup()
+        self._variables_setup(debug)
 
 
     """ _________________ Public Functions __________________ """
@@ -37,8 +37,9 @@ class Calculator(QWidget):
         """
         
         try:
-            result = self.operator.operate(self.expression)
+            result = self.operator.operate(self.expression, self.debug)
             self._set_display(result)
+            
         except BadExpressionException as e:
             self.expression.clear()
             self._set_display("ERR")
@@ -102,13 +103,14 @@ class Calculator(QWidget):
         self.setLayout(self.main_layout)
         
 
-    def _variables_setup(self) -> None:
+    def _variables_setup(self, debug: bool=False) -> None:
         """
         Attach variables to serve as the memory of the calculator.
         """
         
         self.operator = Connector.get_operator()
         self.expression = Connector.get_expression()
+        self.debug = debug
     
 
     def _set_display(self, text: str | float | int) -> None:
