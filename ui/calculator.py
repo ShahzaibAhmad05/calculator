@@ -55,14 +55,19 @@ class Calculator(QWidget):
         self._set_display("")
         
 
-    def backspace(self) -> None:
+    def backspace(self) -> str:
         """
         Removes one char from the display and internal expression.
+        
+        Returns:
+            str: the removed character
         """
         
-        self.expression.backspace()
+        removed_char = self.expression.backspace()
         text = self.expression.get_displayable()
         self._set_display(text)
+        
+        return removed_char
         
 
     def add(self, char: str) -> None:

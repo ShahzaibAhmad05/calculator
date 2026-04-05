@@ -31,6 +31,11 @@ class Connector:
             
         elif text == "⌫":
             calculator.backspace()
+            
+        elif text == "±":
+            char = calculator.backspace()
+            calculator.add("-")
+            calculator.add(char)
         
         elif text in ['C', 'CE']:
             calculator.clear()

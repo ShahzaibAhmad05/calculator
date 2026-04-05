@@ -36,8 +36,10 @@ class Expression():
         """
         
         try:
+            char_to_be_removed = self.calculatable_expression[-1]
             self.calculatable_expression = self.calculatable_expression[:-1]
             self.display_expression = self.display_expression[:-1]
+            return char_to_be_removed
             
         except IndexError:
             raise BadLogicException("Cannot backspace an empty expression.")
