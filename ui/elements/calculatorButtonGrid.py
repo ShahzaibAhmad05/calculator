@@ -25,14 +25,21 @@ class CalculatorButtonGrid(QGridLayout):
     def __init__(self, calculator: 'Calculator'):
         super().__init__()
         self.calculator = calculator
-        
-        self._primary_buttons_setup()
-        self._secondary_buttons_setup()
-        Style.calculator_button_grid(self)
+        self._buttons_setup()
+        self._apply_style()
         calculator.main_layout.addLayout(self)
         
 
-    """ ____________ Internal Functions _____________ """
+    """ ____________ Private Functions _____________ """
+    
+
+    def _apply_style(self) -> None:
+        Style.calculator_button_grid(self)
+    
+
+    def _buttons_setup(self) -> None:
+        self._primary_buttons_setup()
+        self._secondary_buttons_setup()
     
 
     def _primary_buttons_setup(self) -> None:
@@ -44,7 +51,7 @@ class CalculatorButtonGrid(QGridLayout):
             ('7', 2, 0), ('8', 2, 1), ('9', 2, 2), ('×', 2, 3),
             ('4', 3, 0), ('5', 3, 1), ('6', 3, 2), ('-', 3, 3),
             ('1', 4, 0), ('2', 4, 1), ('3', 4, 2), ('+', 4, 3),
-            ('±', 5, 0), ('0', 5, 1), ('.', 5, 2), ('=', 5, 3),
+            ('0', 5, 1), ('.', 5, 2), ('=', 5, 3),  # there is a button missing at 5,0
         ]
             
         for text, row, col in primary_buttons:
@@ -58,8 +65,8 @@ class CalculatorButtonGrid(QGridLayout):
         """
         
         secondary_buttons = [
-            ('%', 0, 0), ('CE', 0, 1), ('C', 0, 2), ('⌫', 0, 3), 
-            ('¹∕𝑥', 1, 0), ('𝑥²', 1, 1), ('√𝑥', 1, 2), ('÷', 1, 3)
+            ('DEC', 0, 0), ('CE', 0, 1), ('C', 0, 2), ('⌫', 0, 3), 
+            ('%', 1, 0), ('𝑥²', 1, 1), ('±', 1, 2), ('÷', 1, 3)
         ]
 
         for text, row, col in secondary_buttons:

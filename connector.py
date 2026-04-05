@@ -10,6 +10,9 @@ for two kinds of connections:
 from logic.operator import Operator
 from logic.expression import Expression
 
+# custom exception types
+from exceptions import BadLogicException
+
 
 # only for type checking
 from typing import TYPE_CHECKING
@@ -24,6 +27,8 @@ class Connector:
     def on_calculator_button_click(calculator: 'Calculator', text: str) -> None:
         """ 
         Invokes when a button is clicked. Requires the text of the button for action.
+        This function has implementation for most of the custom buttons of the
+        calculator.
         """
         
         if text == "=":
@@ -36,6 +41,12 @@ class Connector:
             char = calculator.backspace()
             calculator.add("-")
             calculator.add(char)
+            
+        elif text == "DEC":
+            try:
+                calculator.display_decimal()
+            except BadLogicException as e:
+                print(e)
         
         elif text in ['C', 'CE']:
             calculator.clear()

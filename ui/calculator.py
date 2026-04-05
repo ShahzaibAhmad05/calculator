@@ -12,7 +12,7 @@ from ui.elements.calculatorButtonGrid import CalculatorButtonGrid
 from connector import Connector
 
 # custom exceptions
-from exceptions import BadExpressionException
+from exceptions import BadExpressionException, BadLogicException
 
 
 class Calculator(QWidget):
@@ -78,6 +78,22 @@ class Calculator(QWidget):
         self.expression.add(char)
         text = self.expression.get_displayable()
         self._set_display(text)
+        
+
+    def display_decimal(self) -> None:
+        """
+        Converts the displayed expression to a decimal if possible. 
+        
+        Raises:
+            BadLogicException: if the conversion is not possible
+        """
+        
+        curr_display_text = self.expression.get_calculatable()
+        
+        try:
+            self._set_display(str(float(self.operator.operate(curr_display_text))))
+        except:
+            raise BadLogicException("Cannot convert to decimal")
     
 
     """ ________________ Private Functions ________________ """
