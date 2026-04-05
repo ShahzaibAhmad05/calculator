@@ -5,6 +5,11 @@ only with float values.
 
 # for expression calculation
 from sympy import sympify
+from sympy.core.sympify import SympifyError
+
+
+# exception types
+from exceptions import BadExpressionException
 
 
 # for type checking only
@@ -28,5 +33,11 @@ class Operator:
         Returns the string of the solved expression. Might be a 
         fraction, but it is guaranteed to be float convertible.
         """
-        return sympify(expression.get_calculatable())
+        
+        try:
+            calculatable_str = expression.get_calculatable()
+            return sympify(calculatable_str)
+        except SympifyError:
+            raise BadExpressionException(
+                f"Bad expression. Cannot parse.\nExpression: '{calculatable_str}'")
     

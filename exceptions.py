@@ -14,3 +14,7 @@ class BadLogicException(Exception):
 class BadArgumentsException(Exception):
     """ Used when wrong type of arguments are thrown into a function """
 
+
+class BadExpressionException(Exception):
+    """ Used when the Operator is not able to evaluate the expression """
+    
