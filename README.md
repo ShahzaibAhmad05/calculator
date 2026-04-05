@@ -14,6 +14,10 @@ Simple inputs. Handles two numbers and one operation at a time.
 ![Calculator Demo](https://lh3.googleusercontent.com/d/1qmJnaHaNTClUwiuom7mkL4r1suFoBkig)
 
 
+---
+
+## Try it
+
 <a href="https://drive.google.com/uc?export=download&id=1xAALMAyzZl4ewpXzfnpBtmKhxRqHxnWz">Download EXE File</a>
 
 
