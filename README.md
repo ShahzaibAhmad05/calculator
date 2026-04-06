@@ -12,19 +12,19 @@ Simple inputs. Handles two numbers and one operation at a time.
 ## Screenshots
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d/16RAB2sc5SgkDcN0T6Ue7XOSczrmsSHgD" alt="Calculator App Screenshot" width="600">
+  <img src="https://lh3.googleusercontent.com/d/16RAB2sc5SgkDcN0T6Ue7XOSczrmsSHgD" alt="Calculator App Screenshot">
 </p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d/19l7AV4TV330T6iBizhTAf0Ftb2BCVphW" alt="Calculator App Screenshot 2" width="600">
+  <img src="https://lh3.googleusercontent.com/d/19l7AV4TV330T6iBizhTAf0Ftb2BCVphW" alt="Calculator App Screenshot 2">
 </p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d/1DZbNxP1cf8-mb-gu6CnYJVo19lZ6YcIG" alt="Calculator App Screenshot 3" width="600">
+  <img src="https://lh3.googleusercontent.com/d/1DZbNxP1cf8-mb-gu6CnYJVo19lZ6YcIG" alt="Calculator App Screenshot 3">
 </p>
 
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d/1P7llXTmpn7qImBULVMj3vyTpCTkjA7da" alt="Calculator App UI" width="600">
+  <img src="https://lh3.googleusercontent.com/d/1P7llXTmpn7qImBULVMj3vyTpCTkjA7da" alt="Calculator App UI">
 </p>
 
 
