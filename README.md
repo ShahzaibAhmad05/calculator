@@ -157,7 +157,7 @@ pip install -r requirements.txt
 - Run from the engine file:
 
 ```bash
-python engine.py
+python main.py
 ```
 
 That's the GUI.
