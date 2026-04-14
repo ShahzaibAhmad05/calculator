@@ -45,6 +45,20 @@ Simple inputs. Handles two numbers and one operation at a time.
 ---
 
 
+## Architectural Notes
+
+Everything starts from `main.py`
+
+It creates the calculator window object, which further initializes the UI elements and the styling.
+
+Clicking on any button calls the connector module which applies the logic behind that specific button.
+
+Furthermore, the expressions are calculated using `sympy.sympify()` which parses and resolves the expressions. One important thing to note is that if the answer is a fraction, it will return the fraction as a string rather than a decimal number.
+
+
+---
+
+
 ## Documentation 
 
 > The code is mostly self-documented using python type hints and docstrings.
